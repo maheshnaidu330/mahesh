@@ -23,11 +23,6 @@ public class LibraryDao {
 		String sql = "insert into BooksMahesh (id,title,author,isbn) values (maheshBooks.nextval,?,?,?)";
 		return template.update(sql,library.getTitle(), library.getAuthor(), library.getIsbn());
 	}
-
-
-	
-	
-
 	public List<Library> getBooks() {
 		return template.query("select * from booksmahesh",new RowMapper<Library>(){  
 	        public Library mapRow(ResultSet rs, int row) throws SQLException {  
