@@ -2,10 +2,11 @@ package com.syens.bank.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.syens.bank.model.BloodBank;
 import com.syens.bank.model.BloodStock;
-
+@Component
 public class BloodBankDao {
 	JdbcTemplate template;
 
