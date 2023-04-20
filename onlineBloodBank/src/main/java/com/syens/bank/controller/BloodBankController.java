@@ -1,44 +1,68 @@
 package com.syens.bank.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.syens.bank.dao.BloodBankDao;
+import com.syens.bank.command.LoginCommand;
 import com.syens.bank.model.BloodBank;
-import com.syens.bank.model.BloodStock;
 
 @Controller
-@ComponentScan("com.syens.bank.dao")
+
 public class BloodBankController {
-	@Autowired
-	BloodBankDao bloodBankDao;
-	@RequestMapping("/bankRegistration")
-	public String bankRegistration()
-	{
-		return "bankRegistration";
+
+	@RequestMapping({ "/", "/index" })
+	public String index(@ModelAttribute("loginCommand") LoginCommand loginCommand, Model m) {
+		m.addAttribute("content", "login");
+		return "index";
 	}
-	@RequestMapping("/bankRegister")
-	public String bankRegister(BloodBank bloodBank)
-	{
-		bloodBankDao.bankRegister(bloodBank);
-		int i=bloodBankDao.addStock(bloodBankDao.getBloodBankId(bloodBank.getbNumber()));
-		return "bankBody";
+
+	@RequestMapping("/login")
+	public String login(@Valid @ModelAttribute("loginCommand") LoginCommand loginCommand, BindingResult br, Model m) {
+		m.addAttribute("content", "login");
+		return "index";
 	}
-	@RequestMapping("/updateBloodGroup")
-	public String updateBloodGroup(Model model)
-	{
-		int aId=5;
-		model.addAttribute("bloodStock", bloodBankDao.getBloodStock(aId));
-		return "updateBloodStockForm";
-		
+
+	@RequestMapping("/adminRegister")
+	public String adminRegister(@ModelAttribute("bloodBank") BloodBank bloodBank, Model m) {
+		m.addAttribute("content", "adminRegister");
+		return "index";
 	}
-	@RequestMapping("/updateBloodStock")
-	public String updateBloodStock(BloodStock bloodStock)
-	{
-		bloodBankDao.updateBloodStock(bloodStock);
-		return "bankBody";
+
+	@RequestMapping("/adminRegisterSer")
+	public String adminRegisterSer(@Valid @ModelAttribute("bloodBank") BloodBank bloodBank, BindingResult br, Model m) {
+		if (br.hasErrors())
+			m.addAttribute("content", "adminRegister");
+		else
+			m.addAttribute("content", "checkOrders");
+		return "index";
+	}
+
+	@RequestMapping("/updateGroup")
+	public String updateGroup(Model m) {
+		m.addAttribute("content", "updateGroup");
+		return "index";
+	}
+
+	@RequestMapping("/checkOrders")
+	public String checkOrders(Model m) {
+		m.addAttribute("content", "checkOrders");
+		return "index";
+	}
+
+	@RequestMapping("/searchDonor")
+	public String searchDonor(Model m) {
+		m.addAttribute("content", "searchDonor");
+		return "index";
+	}
+
+	@RequestMapping("/updateBank")
+	public String updateBank(Model m) {
+		m.addAttribute("content", "updateBank");
+		return "index";
 	}
 }

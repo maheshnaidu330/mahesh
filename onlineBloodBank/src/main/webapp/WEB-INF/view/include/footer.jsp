@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="updateBloodGroup">Update Blood Group </a>
-<a href="searchDonor">Search Donor </a>
-<a href="yourOrders">Your Orders</a>
-<a href="updateUser">Update Your Details</a>
-<a href="Logout">Logout</a>
+
 </body>
 </html>

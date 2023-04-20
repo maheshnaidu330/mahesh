@@ -15,7 +15,7 @@ import com.syena.dao.ToDoDao;
 import com.syena.model.ToDo;
 
 @Controller
-@ComponentScan("com.syena.dao")
+
 public class ToDoController {
 	@Autowired
 	ToDoDao dao;
