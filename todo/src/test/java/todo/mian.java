@@ -14,6 +14,10 @@ public static void main(String[] args) {
 ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 ToDoDao controller= context.getBean(ToDoDao.class);
 
+
+
+
+
 List<ToDo> a= controller.getTodos();
 for(ToDo d:a)
 {
