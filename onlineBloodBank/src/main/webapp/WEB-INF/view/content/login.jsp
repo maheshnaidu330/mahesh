@@ -30,7 +30,7 @@
 						path="password" cssClass="error"></f:errors> </td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Login"></td>
+				<td colspan="2" class ="submit"><input type="submit" value="Login"></td>
 			</tr>
 		</table>
 	</f:form>

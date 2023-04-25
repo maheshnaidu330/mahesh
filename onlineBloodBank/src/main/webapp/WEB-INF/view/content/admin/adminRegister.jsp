@@ -38,7 +38,7 @@
 					<f:errors path="bAddress" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Register" /></td>
+				<td colspan="2" class ="submit"><input type="submit" value="Register" /></td>
 			</tr>
 		</table>
 

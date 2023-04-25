@@ -1,6 +1,7 @@
 package com.syens.bank.model;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 public class BloodBank {
 	private int bId;
@@ -12,7 +13,7 @@ public class BloodBank {
 	private String bAddress;
 	@NotBlank(message = "*Required")
 	private String bEmail;
-	@NotBlank(message = "*Required")
+	@Size(min=3, max=10, message="password should be in between 3 to 10")
 	private String bPassword;
 	private int role;
 	

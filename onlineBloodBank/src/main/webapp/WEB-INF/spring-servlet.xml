@@ -9,17 +9,20 @@ http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd
 http://www.springframework.org/schema/mvc  
 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
-
-	<context:component-scan base-package="com.syens"></context:component-scan>
+	<context:property-placeholder location="classpath:datasource-cfg.properties" />
+	<context:component-scan base-package="com.syens"/>
 	<mvc:annotation-driven />
+
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/view/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	<!-- <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> 
-		<property name="url" value="jdbc:oracle:thin:@192.168.10.230:1521:orcl"></property> 
-		<property name="username" value="training"></property> <property name="password" 
-		value="training"></property> </bean> -->
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${ds.database-driver}"></property>
+		<property name="url" value="${ds.url}"></property>
+		<property name="username" value="${ds.username}"></property>
+		<property name="password" value="${ds.password}"></property>
+	</bean>
 </beans>

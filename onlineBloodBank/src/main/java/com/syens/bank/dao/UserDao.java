@@ -30,7 +30,7 @@ public class UserDao {
 		return template.query("select * from user where donor='donor' and bGroup='"+bGroup+"' and address like '%"+address+"%'", new RowMapper<User>() {
 			public User mapRow(ResultSet rs, int row) throws SQLException {
 				User e = new User();
-				e.setNumber(rs.getLong(2));
+				e.setNumber(rs.getString(2));
 				e.setName(rs.getString(1));
 				e.setEmail(rs.getString(3));
 				e.setAddress(rs.getString(5));

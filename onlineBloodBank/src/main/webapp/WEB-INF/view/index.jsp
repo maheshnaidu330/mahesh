@@ -35,34 +35,57 @@ div {
 	margin: 30px;
 }
 
-.header, .menu {
+.header, .menu, .content {
 	text-align: center;
 }
+.menu
+{
 
-.content {
-	text-align: center;
+}
+.content
+{
+
+}
+.submit {
+	text-align: center
 }
 
+body {
+	color: white;
+	background-color: #a0d2eb;
+}
 
 a {
 	text-decoration: none;
+	color: red;
+	margin: 10px;
+}
+
+a:hover {
+	background-color: #e5eaf5;
+}
+
+.center {
+	width: 90%;
 }
 </style>
 </head>
 <body>
-	<div class="header">
-		<h1>Online Blood bank</h1>
-		<hr>
+	<div class="project">
+		<div class="header">
+			<h1>Online Blood bank</h1>
+			<hr>
 
-	</div>
-	<div class="menu">
-		<jsp:include page="include/menu.jsp"></jsp:include>
-	</div>
-	<div class="content">
-		<jsp:include page="include/content.jsp"></jsp:include>
-	</div>
-	<div class="footer">
-		<jsp:include page="include/footer.jsp"></jsp:include>
+		</div>
+		<div class="menu">
+			<jsp:include page="include/menu.jsp"></jsp:include>
+		</div>
+		<div class="content">
+			<jsp:include page="include/content.jsp"></jsp:include>
+		</div>
+		<div class="footer">
+			<jsp:include page="include/footer.jsp"></jsp:include>
+		</div>
 	</div>
 </body>
 </html>

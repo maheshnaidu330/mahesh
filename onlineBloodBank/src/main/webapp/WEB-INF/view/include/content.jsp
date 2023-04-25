@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,22 +42,26 @@
 			</c:choose>
 		</c:when>
 		<c:when test="${sessionScope.userId!=null && sessionScope.role == 2}">
-			<c:when test="${content == 'updateGroup'}"><jsp:include
-					page="../content/admin/updateGroup.jsp" />
-			</c:when>
-			<c:when test="${content == 'checkOrders'}"><jsp:include
-					page="../content/admin/checkOrders.jsp" />
-			</c:when>
-			<c:when test="${content == 'searchDonor'}"><jsp:include
-					page="../content/user/searchDonor.jsp" />
-			</c:when>
-			<c:when test="${content == 'updateBank'}"><jsp:include
-					page="../content/admin/updateBank.jsp" />
-			</c:when>
+			<c:choose>
+				<c:when test="${content == 'updateGroup'}"><jsp:include
+						page="../content/admin/updateGroup.jsp" />
+				</c:when>
+				<c:when test="${content == 'checkOrders'}"><jsp:include
+						page="../content/admin/checkOrders.jsp" />
+				</c:when>
+				<c:when test="${content == 'searchDonor'}"><jsp:include
+						page="../content/user/searchDonor.jsp" />
+				</c:when>
+				<c:when test="${content == 'updateBank'}"><jsp:include
+						page="../content/admin/updateBank.jsp" />
+				</c:when>
+			</c:choose>
 		</c:when>
 		<c:otherwise>
-			<jsp:include page="../content/login.jsp"></jsp:include>
+		This is other wise ${sessionScope.userId}, ${sessionScope.role}
 		</c:otherwise>
+
+
 
 	</c:choose>
 	<%-- <c:choose>
