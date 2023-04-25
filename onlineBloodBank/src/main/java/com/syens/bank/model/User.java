@@ -4,13 +4,14 @@ public class User
 {
 private int id;
 private String name;
-private long number;
+private String number;
 
 private String email;
 private String password;
 private String bGroup;
 private String donor;
 private String address;
+private int role; 
 public int getId() {
 	return id;
 }
@@ -23,10 +24,10 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public long getNumber() {
+public String getNumber() {
 	return number;
 }
-public void setNumber(long number) {
+public void setNumber(String number) {
 	this.number = number;
 }
 public String getEmail() {
@@ -60,10 +61,17 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
+
+public int getRole() {
+	return role;
+}
+public void setRole(int role) {
+	this.role = role;
+}
 @Override
 public String toString() {
 	return "User [id=" + id + ", name=" + name + ", number=" + number + ", email=" + email + ", password=" + password
-			+ ", bGroup=" + bGroup + ", donor=" + donor + ", address=" + address + "]";
+			+ ", bGroup=" + bGroup + ", donor=" + donor + ", address=" + address + ", role=" + role + "]";
 }
 
 }
