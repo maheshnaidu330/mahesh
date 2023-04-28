@@ -12,10 +12,12 @@
 <body>
 	<c:choose>
 		<c:when test="${sessionScope.userId==null}">
+		
 			<c:choose>
 				<c:when test="${param.act eq 'login'}">
 				<div class="error center" >Invalid Credentials</div><br>
 				</c:when>
+
 			</c:choose>
 		</c:when>
 		<c:when test="${sessionScope.userId!= null && sessionScope.role == 1}">

@@ -10,7 +10,7 @@
 </head>
 <body>
 	<f:form modelAttribute="loginCommand" action="login">
-		<table border="1">
+		<table >
 			<tr>
 				<td><label>Role </label></td>
 				<td><f:select path="role" cssClass="field">

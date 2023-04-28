@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="donorSearchForm.jsp" />
+
 <h1>Donors List</h1>  
 <table border="2" width="70%" cellpadding="2">  
 <tr><th>Name</th><th>Number</th><th>Email</th><th>Address</th><th>Group</th></tr>  

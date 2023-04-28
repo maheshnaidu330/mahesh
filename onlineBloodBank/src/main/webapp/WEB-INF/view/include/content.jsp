@@ -10,8 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- invalid valid credidentials also can do but for trying different things iam using this -->
+
+	<c:if test="${success != null || error != null}"><jsp:include
+			page="message.jsp" /></c:if>
+
 	<c:choose>
-		<c:when test="${sessionScope.userId==null}">
+		<c:when test="${sessionScope.user==null}">
 			<c:choose>
 				<c:when test="${content == 'userRegister'}"><jsp:include
 						page="../content/user/userRegister.jsp" />
@@ -24,7 +29,7 @@
 				</c:when>
 			</c:choose>
 		</c:when>
-		<c:when test="${sessionScope.userId!=null && sessionScope.role == 1}">
+		<c:when test="${sessionScope.user!=null && sessionScope.role == 1}">
 			<c:choose>
 				<c:when test="${content == 'searchGroup'}"><jsp:include
 						page="../content/user/searchGroup.jsp" />
@@ -38,10 +43,10 @@
 				<c:when test="${content == 'searchDonor'}"><jsp:include
 						page="../content/user/searchDonor.jsp" />
 				</c:when>
-
+				
 			</c:choose>
 		</c:when>
-		<c:when test="${sessionScope.userId!=null && sessionScope.role == 2}">
+		<c:when test="${sessionScope.user!=null && sessionScope.role == 2}">
 			<c:choose>
 				<c:when test="${content == 'updateGroup'}"><jsp:include
 						page="../content/admin/updateGroup.jsp" />

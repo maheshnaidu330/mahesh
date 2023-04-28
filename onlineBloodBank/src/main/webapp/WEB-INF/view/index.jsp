@@ -38,18 +38,31 @@ div {
 .header, .menu, .content {
 	text-align: center;
 }
-.menu
+
+.menu {
+	
+}
+
+.content {
+	
+}
+
+input[type=submit] {
+	text-align: center;
+	width:100%;
+	 background-color: #b3b3ff;
+	border: none;
+	  border-radius: 10px;
+	color: white;
+	padding: 10px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+input[type=submit]:hover
 {
-
+ background-color: #3399ff;
 }
-.content
-{
-
-}
-.submit {
-	text-align: center
-}
-
 body {
 	color: white;
 	background-color: #a0d2eb;
