@@ -104,7 +104,7 @@ public class UserController {
 
 	@RequestMapping("/searchDonor")
 	public String searchDonor(@ModelAttribute("searchCommand") SearchCommand searchCommand, Model m) {
-		m.addAttribute("donor", service.getDonorList(searchCommand));
+		m.addAttribute("users", service.getDonorList(searchCommand));
 		m.addAttribute("content", "searchDonor");
 		return "index";
 	}
@@ -113,6 +113,7 @@ public class UserController {
 	public String searchDonorSer(@Valid @ModelAttribute("searchCommand") SearchCommand searchCommand, BindingResult br,
 			Model m) {
 		m.addAttribute("content", "searchDonor");
+		m.addAttribute("users", service.getDonorList(searchCommand));
 		return "index";
 	}
 }

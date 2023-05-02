@@ -10,12 +10,12 @@
 </head>
 <body>
 	<form:form action="update">
-					<input type="hidden" name="id" value="${book.id}">
-						<input type="text" name="title" value="${book.title}">
-						<br>
-						<textarea rows="10" cols="100" name="content">${book.content}</textarea>
-						<br>
-						<input type="submit" value="Update" />
-					</form:form>
+		<input type="hidden" name="id" value="${book.id}">
+		<input type="text" name="title" value="${book.title}">
+		<br>
+		<textarea rows="10" cols="100" name="content">${book.content}</textarea>
+		<br>
+		<input type="submit" value="Update" />
+	</form:form>
 </body>
 </html>

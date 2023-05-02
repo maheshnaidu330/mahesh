@@ -82,15 +82,24 @@ public class UserDao {
 	}
 
 	public List<User> getDonorList(SearchCommand searchCommand) {
-		if(searchCommand==null)
+
+		System.out.println(searchCommand);
+		System.out.println("firs"+searchCommand.getSearch());
+		System.out.println("second"+searchCommand.getbGroup());
+		String sql;
+		if(searchCommand.getbGroup()==null)
 		{
-			
+			System.out.println("nullnshhs");
+			sql="select * from blooduser where donor='yes'";
 		}
+		
 		else
-		{
-		return null;
-		}
-		return null;
+			sql="select * from blooduser where donor='yes' and bgroup='"+searchCommand.getbGroup()+"' and (name like '%"+searchCommand.getSearch()+"%' or address like '%"+searchCommand.getSearch()+"%')";
+		List<User> a= template.query( sql, new BeanPropertyRowMapper<User>(User.class));
+		System.out.println(a);
+		return a;
+		
+	
 	}
 
 }

@@ -9,6 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+${key}
 	<form:form action="add">
 
 		<input type="text" name="title" placeholder="Title">

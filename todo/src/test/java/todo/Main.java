@@ -1,5 +1,7 @@
 package todo;
 
-public class Main extends A implements I{
+public class Main {
+	public static void main(String[] args) {
+	}
 
 }
